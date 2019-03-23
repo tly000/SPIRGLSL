@@ -46,7 +46,9 @@ template<int N> float4 create_vector(){
     return float4(N);
 }
 
-void main(){
-    int test2 = 2345;
-    gl_Position.x += cl::dot(create_vector<getPrime(99)>(),create_vector<getPrime(120)>());
+int test1 = 22545;
+
+void main() {
+    int test2 = 2345 + test1;
+    gl_Position.x += cl::dot(create_vector<getPrime(99)>(), float4{4,5,6,7}) + test1 + test2;
 }
