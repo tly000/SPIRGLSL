@@ -23,6 +23,98 @@ __out extern float VarClipDistance[];
 #define gl_ClipDistance cl::__spirv::VarClipDistance
 
 #endif
+
+#ifdef __tessctrl_shader__
+
+__in int VarPatchVertices;
+#define gl_PatchVerticesIn cl::__spirv::VarPatchVertices
+__in int VarPrimitiveId;
+#define gl_PrimitiveID cl::__spirv::VarPrimitiveId
+__in int VarInvocationId;
+#define gl_InvocationID cl::__spirv::VarInvocationId
+
+__out float VarTessLevelOuter[4];
+#define gl_TessLevelOuter cl::__spirv::VarTessLevelOuter
+__out float VarTessLevelInner[4];
+#define gl_TessLevelInner cl::__spirv::VarTessLevelInner
+
+#endif
+
+#ifdef __tesseval_shader__
+
+__in int VarPatchVertices;
+#define gl_PatchVerticesIn cl::__spirv::VarPatchVertices
+__in int VarPrimitiveId;
+#define gl_PrimitiveID cl::__spirv::VarPrimitiveId
+__in float3 VarTessCoord;
+#define gl_TessCoord cl::__spirv::VarTessCoord
+
+__in float VarTessLevelOuter[4];
+#define gl_TessLevelOuter cl::__spirv::VarTessLevelOuter
+__in float VarTessLevelInner[4];
+#define gl_TessLevelInner cl::__spirv::VarTessLevelInner
+
+__out float4 VarPosition;
+#define gl_Position cl::__spirv::VarPosition
+__out float VarPointSize;
+#define gl_PointSize cl::__spirv::VarPointSize
+__out extern float VarClipDistance[];
+#define gl_ClipDistance cl::__spirv::VarClipDistance
+
+#endif
+
+#ifdef __geometry_shader__
+
+__in int VarInvocationId;
+#define gl_InvocationID cl::__spirv::VarInvocationId
+
+__out float4 VarPosition;
+#define gl_Position cl::__spirv::VarPosition
+__out float VarPointSize;
+#define gl_PointSize cl::__spirv::VarPointSize
+__out extern float VarClipDistance[];
+#define gl_ClipDistance cl::__spirv::VarClipDistance
+__out int VarPrimitiveId;
+#define gl_PrimitiveID cl::__spirv::VarPrimitiveId
+__out int Layer;
+#define gl_Layer cl::__spirv::Layer
+
+#endif
+
+#ifdef __fragment_shader__
+
+__in float4 VarFragCoord;
+#define gl_FragCoord cl::__spirv::VarFragCoord
+__in bool VarFrontFacing;
+#define gl_FrontFacing cl::__spirv::VarFrontFacing
+__in float2 VarPointCoord;
+#define gl_PointCoord cl::__spirv::VarPointCoord
+
+__in extern float VarClipDistance[];
+#define gl_ClipDistance cl::__spirv::VarClipDistance
+__in int VarPrimitiveId;
+#define gl_PrimitiveID cl::__spirv::VarPrimitiveId
+
+__out float VarFragDepth;
+#define gl_FragDepth cl::__spirv::VarFragDepth
+
+#endif
+
+#ifdef __compute_shader__
+
+__in uint3 VarNumWorkGroups;
+#define gl_NumWorkGroups cl::__spirv::VarNumWorkGroups
+__in uint3 VarWorkGroupId;
+#define gl_WorkGroupID cl::__spirv::VarWorkGroupId
+__in uint3 VarLocalInvocationId;
+#define gl_LocalInvocationID cl::__spirv::VarLocalInvocationID
+__in uint3 VarGlobalInvocationId;
+#define gl_GlobalInvocationID cl::__spirv::VarGlobalInvocationId
+__in uint VarLocalInvocationIndex;
+#define gl_LocalInvocationIndex cl::__spirv::VarLocalInvocationIndex
+
+#endif
+
 }
 }
 #endif
