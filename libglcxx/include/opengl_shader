@@ -1,0 +1,17 @@
+//
+// Created by tly on 24.03.2019.
+//
+
+#pragma once
+
+#ifdef __GLSL__
+namespace cl{
+namespace __spirv
+{
+#ifdef __vertex_shader__
+__out float4 VarPosition;
+#define gl_Position cl::__spirv::VarPosition
+#endif
+}
+}
+#endif

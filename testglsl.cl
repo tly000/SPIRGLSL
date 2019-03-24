@@ -5,16 +5,7 @@
 #include <opencl_def>
 #include <opencl_common>
 #include <opencl_geometric>
-#include <opencl_image>
-
-namespace cl{
-namespace __spirv
-{
-__out float4 VarPosition;
-}
-}
-
-#define gl_Position cl::__spirv::VarPosition
+#include <opengl_shader>
 
 __uniform uint32_t test = 77;
 
@@ -48,13 +39,7 @@ template<int N> float4 create_vector(){
 
 int test1 = 22545;
 
-__uniform struct Test{
-   float a,b,c;
-} testStruct;
-
-__buffer int values[];
-
 void main() {
     int test2 = 2345 + test1;
-    gl_Position.x += cl::dot(create_vector<getPrime(99)>(), float4{4,5,6,7}) + test1 + test2;
+    gl_Position.xy += cl::dot(create_vector<getPrime(99)>(), float4{4,5,6,7}) + test1 + test2;
 }
