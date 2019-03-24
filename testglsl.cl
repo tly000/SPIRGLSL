@@ -16,7 +16,7 @@ __out float4 VarPosition;
 
 #define gl_Position cl::__spirv::VarPosition
 
-__uniform uint32_t test;
+__uniform uint32_t test = 77;
 
 constexpr bool isPrimeLoop(int i, int k) {
     return (k*k > i) ? true : (i%k == 0) ? false : isPrimeLoop(i, k + 1);
@@ -47,6 +47,12 @@ template<int N> float4 create_vector(){
 }
 
 int test1 = 22545;
+
+__uniform struct Test{
+   float a,b,c;
+} testStruct;
+
+__buffer int values[];
 
 void main() {
     int test2 = 2345 + test1;
