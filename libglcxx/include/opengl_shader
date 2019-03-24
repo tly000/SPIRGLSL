@@ -9,8 +9,19 @@ namespace cl{
 namespace __spirv
 {
 #ifdef __vertex_shader__
+
+__in int VarVertexId;
+#define gl_VertexID cl::__spirv::VarVertexId
+__in int VarInstanceId;
+#define gl_InstanceID cl::__spirv::VarInstanceId
+
 __out float4 VarPosition;
 #define gl_Position cl::__spirv::VarPosition
+__out float VarPointSize;
+#define gl_PointSize cl::__spirv::VarPointSize
+__out extern float VarClipDistance[];
+#define gl_ClipDistance cl::__spirv::VarClipDistance
+
 #endif
 }
 }

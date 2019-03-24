@@ -42,4 +42,5 @@ int test1 = 22545;
 void main() {
     int test2 = 2345 + test1;
     gl_Position.xy += cl::dot(create_vector<getPrime(99)>(), float4{4,5,6,7}) + test1 + test2;
+    //gl_ClipDistance[2] = 0.34;
 }
