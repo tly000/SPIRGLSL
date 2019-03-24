@@ -5,3 +5,15 @@
 [submodule "libclcxx"]
     path = libclcxx
     url = https://github.com/KhronosGroup/libclcxx
+
+[submodule "SPIRV-Tools"]
+    path = SPIRV-Tools
+    url = https://github.com/KhronosGroup/SPIRV-Tools
+
+[submodule "SPIRVGLSL-LLVM"]
+    path = SPIRV-LLVM
+    url = https://github.com/tly000/SPIRVGLSL-LLVM    
+
+[submodule "SPIRGLSL-clang"]
+    path = SPIRV-LLVM/tools/clang
+    url = https://github.com/tly000/SPIRGLSL-clang     
